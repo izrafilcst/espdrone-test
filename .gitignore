@@ -1,0 +1,25 @@
+# PlatformIO build artifacts
+.pio/
+
+# ESP-IDF generated (nunca commitar — gerado pelo menuconfig/pio run)
+sdkconfig
+sdkconfig.old
+
+# IDF Component Manager — baixado automaticamente na 1a build
+managed_components/
+dependencies.lock
+
+# IDE
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+*.pyc
+__pycache__/
+
+# Claude internal (memoria local, nao e codigo do projeto)
+.claude/
