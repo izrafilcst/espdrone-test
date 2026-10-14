@@ -1,5 +1,9 @@
 # Guia de Testes — Fase 0 (Firmwares de Bring-up)
 
+> **Status: FASE 0 CONCLUÍDA** (2026-04-30) — todos os 4 bring-ups passaram.
+> Firmware ativo no repositório: `diag_camera_frame.cpp` (Fase 0.4).
+> Próximo passo: Fase 1 — PCB, térmica e montagem.
+
 Cada firmware é um `.cpp` isolado em `main/`. Apenas um compila por vez.
 Para trocar de firmware: editar **duas linhas** em `main/CMakeLists.txt` e gravar.
 

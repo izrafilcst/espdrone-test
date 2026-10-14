@@ -39,9 +39,13 @@ drone-esp32s3/
 │
 ├── main/
 │   ├── CMakeLists.txt
-│   ├── main.cpp                 # Bootstrap: NVS, eventos, spawn das tasks
+│   ├── main.cpp                 # Bootstrap: NVS, eventos, spawn das tasks (Fase 1+)
 │   ├── app_config.hpp           # #defines globais e versão de firmware
-│   └── pinmap.hpp               # ÚNICA fonte de pinagem (espelha §3 deste doc)
+│   ├── pinmap.hpp               # ÚNICA fonte de pinagem (espelha §3 deste doc)
+│   ├── diag_i2c_scanner.cpp     # [Fase 0.1 ✔] I2C scan + MPU6050 WHO_AM_I
+│   ├── diag_mosfet_burst.cpp    # [Fase 0.2 ✔] MCPWM burst + caracterização sag
+│   ├── diag_gps_nmea.cpp        # [Fase 0.3 ✔] UART2 NMEA parser + CLI GPS
+│   └── diag_camera_frame.cpp    # [Fase 0.4 ✔] OV2640 DVP + sustain 25 FPS/60 s
 │
 ├── components/
 │   ├── flight_engine/           # [Core 1] Loop PID, fusão sensorial, hover
@@ -498,5 +502,6 @@ pio run -t coredump -e drone-s3
 | Versão | Data | Autor | Mudança |
 |--------|------|-------|---------|
 | 1.0.0  | 2026-04-25 | Claude (gen) | Versão inicial — pinagem, SMP, build, mitigações |
+| 1.1.0  | 2026-04-30 | Claude (gen) | Fase 0 concluída — diag_*.cpp adicionados ao §2; registro de status em guia_fase0_testes.md; bump FIRMWARE_VERSION 0.2.0-dev |
 
 > Qualquer alteração de pinagem, prioridade de task ou frequência de PWM **exige bump de versão** e nota de migração.

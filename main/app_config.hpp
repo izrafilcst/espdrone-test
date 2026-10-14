@@ -4,7 +4,7 @@
 
 namespace drone::config {
 
-constexpr const char* FIRMWARE_VERSION = "0.1.0-dev";
+constexpr const char* FIRMWARE_VERSION = "0.2.0-dev";
 constexpr const char* TARGET_BOARD     = "esp32-s3-wroom-1 N16R8";
 
 // ----- Loop de voo (CLAUDE.md §4.2) -----
